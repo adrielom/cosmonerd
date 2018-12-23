@@ -55,4 +55,13 @@ public class RocketManager : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "coin")
+        {
+            other.gameObject.GetComponent<CoinManager>().canMove = false;
+            other.gameObject.GetComponent<CoinManager>().ResetPosition();
+        }
+    }
+
 }
