@@ -4,24 +4,17 @@ using UnityEngine;
 
 public class RocketManager : MonoBehaviour
 {
-    Animator animator;
-    bool dragging = false;
     public float speed;
-
-    void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
 
     void Update()
     {
         //Moves rotation back slowly
         if (transform.rotation.z != 0)
         {
-            //Sets moves rotation to target's one
-            Quaternion q = Quaternion.Euler(0, 0, 0);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, q, Time.deltaTime * speed * 10);
+            ResetRotation();
         }
+        // Makes the y position constant throughout the game
+        transform.position = new Vector3(transform.position.x, -2.35f, transform.position.z);
     }
 
     void OnMouseDrag()
@@ -48,6 +41,10 @@ public class RocketManager : MonoBehaviour
             //Rotates right on movement
             transform.eulerAngles = new Vector3(transform.rotation.x, transform.rotation.y, 6);
         }
+        else if (transform.position.x - objPosition.x == 0)
+        {
+            ResetRotation();
+        }
         else
         {
             //Rotates left on movement
@@ -55,12 +52,19 @@ public class RocketManager : MonoBehaviour
         }
     }
 
+    public void ResetRotation()
+    {
+        //Sets moves rotation to target's one
+        Quaternion q = Quaternion.Euler(0, 0, 0);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, q, Time.deltaTime * speed * 10);
+    }
+
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "coin")
         {
-            other.gameObject.GetComponent<CoinManager>().canMove = false;
-            other.gameObject.GetComponent<CoinManager>().ResetPosition();
+            CoinManager c = other.gameObject.GetComponent<CoinManager>();
+            c.ResetPosition();
         }
     }
 

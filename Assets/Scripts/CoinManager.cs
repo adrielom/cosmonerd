@@ -4,37 +4,24 @@ using UnityEngine;
 
 public class CoinManager : MonoBehaviour
 {
-
+    [SerializeField]
+    public Color color;
+    [SerializeField]
+    public int value;
+    [SerializeField]
     public float speed;
-    public int value, spawnRate = 1;
-    public bool canMove;
 
-    void Start()
-    {
-        ResetPosition();
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        if (canMove)
-        {
-            Move();
-        }
+        Move();
+        //GetComponent<SpriteRenderer>().color = color;
     }
 
-    IEnumerator WaitFor(float f)
-    {
-        yield return new WaitForSeconds(f * spawnRate);
-        canMove = true;
-    }
-
-    void Move()
+    public void Move()
     {
         transform.Translate(Vector2.down * speed * Time.deltaTime);
-        if (transform.position.y <= -6.5f)
+        if (transform.position.y < -6.5f)
         {
-            canMove = false;
             ResetPosition();
         }
     }
@@ -42,6 +29,5 @@ public class CoinManager : MonoBehaviour
     public void ResetPosition()
     {
         transform.position = new Vector3(Random.Range(-2.5f, 2.5f), Random.Range(6.5f, 8), 0);
-        StartCoroutine(WaitFor(Random.Range(3, 10)));
     }
 }
