@@ -4,7 +4,36 @@ using UnityEngine;
 
 public class RocketManager : MonoBehaviour
 {
-    public float speed;
+
+    public class Rocket {
+
+        
+        public string name;
+        public SpriteRenderer image;
+        public ParticleSystem particle;
+        public float speed;
+
+        public Rocket (string name, SpriteRenderer image, ParticleSystem particle, float speed)
+        {
+            this.name = name;
+            this.image = image;
+            this.particle = particle;
+            this.speed = speed;
+        }
+
+        public Rocket (float speed)
+        {
+            this.speed = speed;
+        }
+
+    }
+
+    float speed;
+
+    void Start()
+    {
+        Rocket rocket = new Rocket(speed);
+    }
 
     void Update()
     {
