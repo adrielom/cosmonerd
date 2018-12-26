@@ -144,13 +144,13 @@ MonoBehaviour:
   coins:
   - speed: 3
     value: 10
-    color: {r: 1, g: 0, b: 0, a: 0}
+    color: {r: 1, g: 0, b: 0, a: 1}
   - speed: 4
     value: 3
-    color: {r: 0.16409683, g: 0, b: 1, a: 0}
+    color: {r: 0.16409683, g: 0, b: 1, a: 1}
   - speed: 2
     value: 5
-    color: {r: 0.26842916, g: 1, b: 0, a: 0}
+    color: {r: 0.26842916, g: 1, b: 0, a: 1}
   maxCoins: 3
   allCoins: []
   toUseCoins: []

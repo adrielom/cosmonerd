@@ -64,6 +64,7 @@ public class RocketManager : MonoBehaviour
         if (other.gameObject.tag == "coin")
         {
             CoinManager c = other.gameObject.GetComponent<CoinManager>();
+            c.gameObject.SetActive(false);
             c.ResetPosition();
         }
     }
