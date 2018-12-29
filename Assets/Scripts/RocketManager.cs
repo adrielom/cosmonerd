@@ -1,19 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class RocketManager : MonoBehaviour
 {
+    //Wrapper class to hold down the list of items in the json
+    [Serializable]
+    public class RocketList
+    {
+        //This object's got to be named exactly like the json key - In the Json I have { "Rockets" : [{"smthg"}, {"smthgElse"}] }
+        public List<Rocket> Rockets;
+    }
 
-    public class Rocket {
-
-        
+    //Individual Objects in the Json
+    [Serializable]
+    public class Rocket
+    {
+        //If the value inherits from monobehaviour it's going to print out null
         public string name;
         public SpriteRenderer image;
         public ParticleSystem particle;
         public float speed;
-
-        public Rocket (string name, SpriteRenderer image, ParticleSystem particle, float speed)
+        public Rocket(string name, SpriteRenderer image, ParticleSystem particle, float speed)
         {
             this.name = name;
             this.image = image;
@@ -21,18 +30,25 @@ public class RocketManager : MonoBehaviour
             this.speed = speed;
         }
 
-        public Rocket (float speed)
+        public Rocket(float speed)
         {
             this.speed = speed;
         }
 
     }
 
+    //string PATH = Application.dataPath;
+    public TextAsset json;
     float speed;
+    public List<Rocket> rock;
 
     void Start()
     {
-        Rocket rocket = new Rocket(speed);
+        //To deserialize a list of objects from the json you've to wrapp the object class on another one that has a list sitting on it
+        var rocketlist = JsonUtility.FromJson<RocketList>(json.text);
+        print(rocketlist);
+        print(rocketlist.ToString());
+
     }
 
     void Update()

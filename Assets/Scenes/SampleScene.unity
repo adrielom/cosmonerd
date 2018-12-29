@@ -5120,6 +5120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47ca156d70666f8488287a255fdf212e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  json: {fileID: 4900000, guid: 83106ae9a7e183749bdc947b3bb70dc0, type: 3}
+  rock: []
 --- !u!60 &1209215204
 PolygonCollider2D:
   m_ObjectHideFlags: 0
