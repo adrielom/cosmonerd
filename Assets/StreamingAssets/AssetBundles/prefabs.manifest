@@ -1,0 +1,55 @@
+ManifestFileVersion: 0
+CRC: 432295688
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: beb74695207ad95333720ad9c1fead6b
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: fee4d1eaa3fdd6ed6a4372f1bce1f24b
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 49
+  Script: {instanceID: 0}
+- Class: 50
+  Script: {instanceID: 0}
+- Class: 58
+  Script: {instanceID: 0}
+- Class: 60
+  Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: f3753ba0effdcbc449fbfd96ead664c2, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 47ca156d70666f8488287a255fdf212e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d07b2d7e0b47bc744beaf9f06d0c541a, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Prefabs/rocket.prefab
+- Assets/Prefabs/poolManager.prefab
+- Assets/Prefabs/coin.prefab
+Dependencies:
+- C:/Users/adrielom/Documents/cosmonerd/Assets/StreamingAssets/AssetBundles/sprites
