@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 3360260153
+CRC: 2222599380
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -9,3 +9,15 @@ AssetBundleManifest:
       Name: prefabs
       Dependencies:
         Dependency_0: sprites
+        Dependency_1: rocketsjson
+        Dependency_2: materials
+    Info_2:
+      Name: rocketsjson
+      Dependencies: {}
+    Info_3:
+      Name: particles
+      Dependencies:
+        Dependency_0: materials
+    Info_4:
+      Name: materials
+      Dependencies: {}

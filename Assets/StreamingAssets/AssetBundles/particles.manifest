@@ -1,0 +1,30 @@
+ManifestFileVersion: 0
+CRC: 982135007
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 97e2500f66d9975b84dbd1866e9e3a9e
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2d9630543cc2bed84c99a65457a4054b
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+Assets:
+- Assets/Resources/Particles/blueParticle.prefab
+- Assets/Resources/Particles/orangeParticle.prefab
+Dependencies:
+- C:/Users/adrielom/Documents/cosmonerd/Assets/StreamingAssets/AssetBundles/materials

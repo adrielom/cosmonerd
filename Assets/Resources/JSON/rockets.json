@@ -1,0 +1,26 @@
+{
+  "Rockets": [
+    {
+      "name": "Super Rocket From The Stars",
+      "image": "rocket01",
+      "particle": "orangeParticle",
+      "speed": 3,
+      "angle": 5,
+      "particleInfo": {
+        "position": [0.66, 1.195, 1],
+        "scale": [0, -0.5, 0]
+      }
+    },
+    {
+      "name": "Awesome Galaxy Rocket",
+      "image": "rocket02",
+      "particle": "blueParticle",
+      "speed": 1,
+      "angle": 15,
+      "particleInfo": {
+        "position": [0.66, 1.195, 1],
+        "scale": [-1, -1.46, 0]
+      }
+    }
+  ]
+}

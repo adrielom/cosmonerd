@@ -1,19 +1,18 @@
 ManifestFileVersion: 0
-CRC: 1085765779
+CRC: 3816721462
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 621643083d1e6077beb074526339d410
+    Hash: 8fe79776f0af99bb93c9992a743d2b9e
   TypeTreeHash:
     serializedVersion: 2
-    Hash: ea5a42e0fd8ea905efa7aa926a3b8944
+    Hash: 51a16e16d5113854a16091e54ae5bb0d
 HashAppended: 0
 ClassTypes:
-- Class: 28
+- Class: 21
   Script: {instanceID: 0}
-- Class: 213
+- Class: 48
   Script: {instanceID: 0}
 Assets:
-- Assets/Resources/Sprites/rocket01.png
-- Assets/Resources/Sprites/rocket02.png
+- Assets/Resources/Materials/particleFire.mat
 Dependencies: []

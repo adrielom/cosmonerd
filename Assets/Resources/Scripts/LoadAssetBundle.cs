@@ -16,7 +16,6 @@ public class LoadAssetBundle : MonoBehaviour
             Debug.Log("Failed to load AssetBundle!");
             return;
         }
-        print(myLoadedAssetBundle.GetAllAssetNames());
         objects = myLoadedAssetBundle.GetAllAssetNames();
         for (int i = 0; i < objects.Length; i++)
         {
