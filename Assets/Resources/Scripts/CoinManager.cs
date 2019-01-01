@@ -11,9 +11,10 @@ public class CoinManager : MonoBehaviour
     [SerializeField]
     public float speed;
 
-    void Start() {
-        GetComponent<SpriteRenderer>().color = color;   
-        ResetPosition(); 
+    void Start()
+    {
+        GetComponent<SpriteRenderer>().color = color;
+        ResetPosition();
     }
 
     void Update()
@@ -40,7 +41,7 @@ public class CoinManager : MonoBehaviour
     {
         if (other.gameObject.tag == "coin")
         {
-           Physics2D.IgnoreCollision (transform.GetComponent<Collider2D>(), other.gameObject.GetComponent<Collider2D>());
+            Physics2D.IgnoreCollision(transform.GetComponent<Collider2D>(), other.gameObject.GetComponent<Collider2D>());
         }
     }
 }

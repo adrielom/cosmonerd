@@ -160,9 +160,12 @@ public class RocketManager : MonoBehaviour
         aBJson.Unload(false);
         aBSprite.Unload(false);
 
+        gameObject.AddComponent<PolygonCollider2D>();
     }
 
     #endregion
+
+    #region ACTUAL GAME LOGIC
 
     void Update()
     {
@@ -180,7 +183,6 @@ public class RocketManager : MonoBehaviour
         MoveRocket();
     }
 
-    #region ACTUAL GAME LOGIC
     public void MoveRocket()
     {
         //Drag Rocket

@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 1459964570
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 551ccea7404ad6635b6c1490689165c3
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 3f7d0c5e0986ec71841622bcb2f9be1c
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+Assets:
+- Assets/Resources/Audio/alexander-hamilton.mp3
+- Assets/Resources/Audio/Alok & Bhaskar - FUEGO (Original Mix) (320  kbps).mp3
+Dependencies: []

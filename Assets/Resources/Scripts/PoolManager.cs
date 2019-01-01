@@ -1,20 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PoolManager : MonoBehaviour
 {
+    [Serializable]
+    public class CoinList
+    {
+        public List<Coin> Coins;
+    }
 
-    [System.Serializable]
+    [Serializable]
     public class Coin
     {
+        public string name;
         public float speed;
         public int value;
-        public Color color;
+        //from 0 to 255
+        public byte[] color;
     }
 
     public GameObject prefab;
-    public Coin[] coins;
+    Coin[] coins;
     public int maxCoins;
     public List<GameObject> allCoins;
     public List<GameObject> toUseCoins;
@@ -22,8 +30,12 @@ public class PoolManager : MonoBehaviour
     bool canLoad = false;
 
     // Use this for initialization
-    void Awake()
+    void Start()
     {
+        AssetBundle aBCoins = AssetBundle.LoadFromFile(Application.streamingAssetsPath + "/AssetBundles/" + "coinsjson");
+        TextAsset textJson = aBCoins.LoadAsset<TextAsset>("coins");
+        var coinlist = JsonUtility.FromJson<CoinList>(textJson.text);
+        coins = coinlist.Coins.ToArray();
         int group = (int)Mathf.Floor(maxCoins / coins.Length);
         foreach (Coin p in coins)
         {
@@ -36,7 +48,7 @@ public class PoolManager : MonoBehaviour
                 g.SetActive(false);
             }
         }
-        InvokeRepeating ("GetsRandomCoin", 2f, rate);
+        InvokeRepeating("GetsRandomCoin", 2f, rate);
     }
 
     GameObject PopulateCoinsPrefabs(Coin c)
@@ -45,22 +57,23 @@ public class PoolManager : MonoBehaviour
         CoinManager cm = i.GetComponent<CoinManager>();
         cm.ResetPosition();
         cm.speed = c.speed;
-        cm.color = c.color;
+        cm.color = new Color32(c.color[0], c.color[1], c.color[2], c.color[3]);
         cm.value = c.value;
         return i;
     }
 
     public void GetsRandomCoin()
-    {   
-        StartCoroutine (loadCoin (Random.Range(0, 10)));
-        if (canLoad) {
+    {
+        StartCoroutine(loadCoin(UnityEngine.Random.Range(0, 10)));
+        if (canLoad)
+        {
             if (allCoins.Count <= 0)
             {
                 allCoins = new List<GameObject>(toUseCoins);
                 toUseCoins.RemoveRange(0, toUseCoins.Count);
             }
 
-            int value = Random.Range(0, allCoins.Count);
+            int value = UnityEngine.Random.Range(0, allCoins.Count);
             GameObject g = allCoins[value];
             allCoins.RemoveAt(value);
             toUseCoins.Add(g);
@@ -71,7 +84,7 @@ public class PoolManager : MonoBehaviour
 
     IEnumerator loadCoin(int f)
     {
-        yield return new WaitForSeconds (f);
+        yield return new WaitForSeconds(f);
         canLoad = true;
     }
 }

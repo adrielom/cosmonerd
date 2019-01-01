@@ -1,0 +1,22 @@
+{
+  "Coins": [
+    {
+      "name": "firstCoin",
+      "color": [255, 0, 255, 255],
+      "speed": 3,
+      "value": 5
+    },
+    {
+      "name": "secondCoin",
+      "color": [255, 111, 0, 255],
+      "speed": 8,
+      "value": 15
+    },
+    {
+      "name": "thirdCoin",
+      "color": [23, 53, 200, 255],
+      "speed": 10,
+      "value": 20
+    }
+  ]
+}

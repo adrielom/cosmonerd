@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 2222599380
+CRC: 1035876108
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -20,4 +20,10 @@ AssetBundleManifest:
         Dependency_0: materials
     Info_4:
       Name: materials
+      Dependencies: {}
+    Info_5:
+      Name: coinsjson
+      Dependencies: {}
+    Info_6:
+      Name: songs
       Dependencies: {}
